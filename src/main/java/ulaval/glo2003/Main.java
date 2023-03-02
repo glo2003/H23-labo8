@@ -11,8 +11,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         ResourceConfig resourceConfig = new ResourceConfig()
-                .register(new HealthResource());
-        URI uri = URI.create("http://localhost:8080/");
+                .register(new RootResource());
+        URI uri = URI.create("http://0.0.0.0:8080/");
 
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(uri, resourceConfig);
         server.start();
